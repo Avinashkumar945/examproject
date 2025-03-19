@@ -3,146 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Showcase</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        @media(min-width:500px){
-         #innerfeedback{
-          display: flex;
-          justify-content: center;
-         }
-         form{
-               background-color: green;
-               border-radius: 5px;
-         }
-        dl{
-         padding:10px;
+    <style>
+        body{
+            background: linear-gradient(to right, #a8b85a, #87c8a8, #6dc4e0);
         }
-    }
-      @media(max-width:1000px){
-         form{
-            width:200px;
-            background-color: green;
-            border-radius: 5px;
-            margin:30px;
-         }
-         input{
-            height:30px;
-            width:50px;
-         }
-         dl{
-          padding:10px;
-         }
-      }
+        .flip-card {
+            width: 200px;
+            height: 300px;
+        }
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .flip-card-front {
+            background-color: #fff;
+        }
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .flip-card-back {
+            background-color: grey;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flip-card-back a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+          section{
+            height:auto;
+          }
+            .book-container {
+                flex-direction: column ;
+                align-items: center;
+                gap: 20px;
+            }
+            .flip-card {
+            width: 240px;
+            height: 300px;
+        }
+        }
+       
     </style>
-    
 </head>
 <body>
-   <header class="text-white d-flex justify-content-center"style="background-color: grey;"><h3>Book Showcase:Book 1 Details</h3></header>
-   <div class="d-flex justify-content-end"style="background-color: black;"><a class="m-1" href="examproject.html">home</a></div>
-   <section style="background-color:#D4F1F4; height: auto;" >
-     <h2 class="ms-4">Book 1: The Guide</h2>
-     <img src="../social/images/theguide.jpg"style="height: 400px; margin-bottom:10px ;margin-left:20px">
-
-        <div class="accordion accordion-flush m-2" id="accordionFlushExample">
-            <div class="accordion-item w-100 mb-3">
-              <h2 class="accordion-header">
-                <button style="background-color:#357266;"class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"  aria-controls="flush-collapseOne">
-                  Gener
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body" style="background-color:#D4F1F4;">
-                  <ul>
-                    <li>Novel</li>
-                    <li>Humar</li>
-                    <li>Philosophical Fiction</li>
-                  </ul>   
+    <header class="h-100 fw-bold text-white d-flex justify-content-center p-3 mt-1" style="background-color:grey">
+        Welcome to Book Showcase
+    </header>
+    <div style="background-color:rgb(48, 47, 47); color:inherit; margin-top:-8px; padding: 3px;">
+        <a class="m-2 d-flex justify-content-end" style="color:blueviolet;" href="#">Home</a>
+    </div>
+    <section>
+        <h3 class="p-5">Explore Books</h3>
+        <div class="d-flex justify-content-sm-evenly book-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../social/images/theguide.jpg" alt="Book Image">
+                    </div>
+                    <div class="flip-card-back">
+                        <a href="index.html">Click For Details</a>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="accordion-item w-100 mb-3">
-              <h2 class="accordion-header">
-                <button style="background-color:#357266;" class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Index page
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse " data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body" style="background-color:#D4F1F4;">
-                    <ol>
-                        <li>Introduction</li>
-                        <li>Plot Summary</li>
-                        <li>Main Characters</li>
-                        <li>Themes & Analysis</li>
-                    </ol> 
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../social/images/rajayoga.jpg" alt="Book Image">
+                    </div>
+                    <div class="flip-card-back">
+                        <a href="index2.html">Click For Details</a>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="accordion-item w-100 mb-3">
-              <h2 class="accordion-header">
-                <button style="background-color:#357266;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                 Author
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body" style="background-color:#D4F1F4;">
-                    R.K. NARAYAN 
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../social/images/discoveryofindia.png" alt="Book Image">
+                    </div>
+                    <div class="flip-card-back">
+                        <a href="index3.html">Click For Details</a>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="accordion-item w-100 mb-3">
-                <h2 class="accordion-header">
-                  <button style="background-color:#357266;"class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
-                   Overview
-                  </button>
-                </h2>
-                <div id="flush-collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body" style="background-color:#D4F1F4;">
-                      <p>The Guide by R.K. Narayan is a story of Raju, a tour guide who evolves from a cunning businessman to a revered spiritual leader. The novel explores love, ambition, deception, and redemption, set in the fictional town of Malgudi. It highlights the contrast between illusion and reality, making it a profound study of human nature and transformation.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item w-100 mb-3">
-                <h2 class="accordion-header">
-                  <button style="background-color:#357266;"class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapsefive">
-                    Competetive Exam Relevience
-                  </button>
-                </h2>
-                <div id="flush-collapsefive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body" style="background-color:#D4F1F4;">
-                     <p>The Guide by R.K. Narayan is relevant for competitive exams, especially in literature, UPSC, and NET exams, due to its themes, narrative style, and cultural significance.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item w-100 mb-3">
-                <h2 class="accordion-header">
-                  <button style="background-color:#357266;"class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapsesix">
-                    Purchase Link
-                  </button>
-                </h2>
-                <div id="flush-collapsesix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body" style="background-color:#D4F1F4;">
-                     <a href="https://www.amazon.in/R-K-NARAYAN-GUIDE-978-81-229-0295-2/dp/B07NCKC99P/ref=sr_1_6?crid=ERRESDIA460H&dib=eyJ2IjoiMSJ9.r3ih0JGAFhf6YeuVcvFrhbSYDQU_Gxme9o2_FkIeeLAZOPI9-tfGf-tFjO-HUhgRC2VY6OeUGi2tsT3Y9gjZZDwWTuGjYJICjQMKbDk_E4u9-Wxnjt7LoCX4kdAJOckLRrJZ-R1gjmdrFS2q_peMJSKwtIdv4pfpchaaZIyWGfSWiT3ONgUg_u6-h6ShWsPRDOKLyk1MpkcN5uh8UemZYW5GWBPhwmYHoV_79iTIH5k.aPxByQ1vIhM2NupbkirhpXhECeOhPta7KnJH8mfGCY0&dib_tag=se&keywords=the+guide+by+r.k.+narayan&qid=1742238858&s=books&sprefix=the+guide+by+r.k.+narayan%2Cstripbooks%2C250&sr=1-6">Amazon</a>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-         <div>
-            <h1 class="ms-4">Feedback Form</h1>
-            <div id="innerfeedback">
-                <form>
-                    <dl>
-                        <dt>Name</dt>
-                         <dd><input type="text" class="form-control w-100"></dd>
-                         <dt>Feedback</dt>
-                         <dd><textarea></textarea></dd>
-                         <button class="btn btn-primary">Submit</button>
-                    </dl>
-                </form>
             </div>
         </div>
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-   </section>
+    </section>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     
 </body>
 </html>
